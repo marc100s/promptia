@@ -1,11 +1,11 @@
 repo_name: marc100s/promptia
-report_id: 7a8d4d65384910301dce7e1e8f22ff77
+report_id: 70a2cc8b51c6b5d1fc7bd6f36434a143
 repo_type: Public
-timestamp: '2023-11-09T17:19:47+00:00'
+timestamp: '2023-12-14T09:50:21+00:00'
 requested_by: marc100s
 provider: github
 branch: main
-detected_tools_count: 13
+detected_tools_count: 15
 tools:
 - name: CSS 3
   description: The latest evolution of the Cascading Style Sheets language
@@ -46,7 +46,19 @@ tools:
   category: Languages & Frameworks
   sub_category: Frameworks (Full Stack)
   image_url: https://img.stackshare.io/service/5936/nextjs.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/marc100s/promptia/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: marc100s
+  last_updated_on: 2023-08-25 18:11:27.000000000 Z
+- name: PostCSS
+  description: Transform CSS with JS plugins
+  website_url: https://github.com/postcss/postcss
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: CSS Pre-processors / Extensions
+  image_url: https://img.stackshare.io/service/3339/rlFcjEdI.png
   detection_source: package.json
   last_updated_by: marc100s
   last_updated_on: 2023-08-25 18:11:27.000000000 Z
@@ -60,18 +72,32 @@ tools:
   category: Libraries
   sub_category: Javascript UI Libraries
   image_url: https://img.stackshare.io/service/1020/OYIaJ1KK.png
-  detection_source_url: package-lock.json
-  detection_source: package.json
+  detection_source_url: https://github.com/marc100s/promptia/blob/main/package-lock.json
+  detection_source: app/create-prompt/page.jsx
   last_updated_by: marc100s
   last_updated_on: 2023-09-03 11:32:51.000000000 Z
+- name: Tailwind CSS
+  description: A utility-first CSS framework for rapid UI development
+  website_url: https://tailwindcss.com
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Front-End Frameworks
+  image_url: https://img.stackshare.io/service/8158/default_660b7c41c3ba489cb581eec89c04655404258c19.png
+  detection_source: package.json
+  last_updated_by: marc100s
+  last_updated_on: 2023-08-25 18:11:27.000000000 Z
 - name: MongoDB
   description: The database for giant ideas
   website_url: http://www.mongodb.com/
+  version: 5.8.1
   open_source: true
   hosted_saas: false
   category: Data Stores
   sub_category: Databases
   image_url: https://img.stackshare.io/service/1030/leaf-360x360.png
+  detection_source_url: https://github.com/marc100s/promptia/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: marc100s
   last_updated_on: 2023-09-03 11:32:51.000000000 Z
@@ -85,7 +111,7 @@ tools:
   category: Data Stores
   sub_category: Object Document Mapper (ODM)
   image_url: https://img.stackshare.io/service/1231/0TXzZU7W_400x400.jpg
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/marc100s/promptia/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: marc100s
   last_updated_on: 2023-09-03 11:32:51.000000000 Z
@@ -119,31 +145,30 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16526/default_0a704f5fac0bffcf529c9a61658d0b9ddbf7504e.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/marc100s/promptia/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: marc100s
   last_updated_on: 2023-09-03 11:32:51.000000000 Z
-- name: postcss
-  description: Tool for transforming styles with JS plugins
-  package_url: https://www.npmjs.com/postcss
-  version: 8.4.14
-  license: MIT
-  open_source: true
+- name: next-auth
+  description: Authentication for Next.js
+  package_url: https://www.npmjs.com/next-auth
+  version: 4.23.1
+  open_source: false
   hosted_saas: false
-  category: Libraries
-  sub_category: npm Packages
-  image_url: https://img.stackshare.io/package/16012/default_7a88bebb451873cc63bd99007de5bd3bb8ef85de.png
-  detection_source_url: package-lock.json
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/npm/image.png
+  detection_source_url: https://github.com/marc100s/promptia/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: marc100s
-  last_updated_on: 2023-08-25 18:11:27.000000000 Z
+  last_updated_on: 2023-09-03 11:32:51.000000000 Z
   vulnerabilities:
-  - name: PostCSS line return parsing error
-    cve_id: CVE-2023-44270
-    cve_url: https://github.com/advisories/GHSA-7fh5-64p2-3v2j
-    detected_date: Oct 4
+  - name: Possible user mocking that bypasses basic authentication
+    cve_id: CVE-2023-48309
+    cve_url: https://github.com/advisories/GHSA-v64w-49xw-qq89
+    detected_date: Nov 25
     severity: moderate
-    first_patched: 8.4.31
+    first_patched: 4.24.5
 - name: react-dom
   description: React package for working with the DOM
   package_url: https://www.npmjs.com/react-dom
@@ -154,7 +179,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15808/default_14fd11531839d935f920b6d55bd6f3528c890ad7.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/marc100s/promptia/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: marc100s
   last_updated_on: 2023-08-25 18:11:27.000000000 Z
@@ -168,7 +193,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/17398/default_2cd7ed1c123f2fca074a6f4b16c4e73d5bfe82be.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/marc100s/promptia/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: marc100s
   last_updated_on: 2023-08-25 18:11:27.000000000 Z
