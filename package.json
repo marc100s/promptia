@@ -12,14 +12,14 @@
     "node": ">=22.0.0"
   },
   "dependencies": {
-    "autoprefixer": "10.4.15",
-    "mongodb": "^5.8.1",
-    "mongoose": "^7.4.5",
-    "next": "^15.2.4",
-    "next-auth": "^4.23.1",
+    "autoprefixer": "^10.4.21",
+    "mongodb": "^6.20.0",
+    "mongoose": "^8.19.3",
+    "next": "^16.0.1",
+    "next-auth": "^4.24.13",
     "postcss": "^8.5.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tailwindcss": "3.3.3"
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tailwindcss": "^3.4.1"
   }
 }
