@@ -12,6 +12,7 @@
     "node": ">=22.0.0"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.17",
     "autoprefixer": "^10.4.21",
     "mongodb": "^7.0.0",
     "mongoose": "^9.0.1",
