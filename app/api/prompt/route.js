@@ -1,5 +1,6 @@
 import { connectToDB } from "@utils/database";
 import Prompt from "@models/prompt";
+import "@models/user";
 
 export const GET = async (request) => {
     try {
