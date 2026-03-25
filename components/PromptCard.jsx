@@ -13,10 +13,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   const [copied, setCopied] = useState("");
 
   const handleProfileClick = () => {
-    console.log(post);
-
     if (post.creator._id === session?.user.id) return router.push("/profile");
-
     router.push(`/profile/${post.creator._id}?name=${post.creator.username}`);
   };
 
@@ -29,8 +26,9 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   return (
     <div className='prompt_card'>
       <div className='flex justify-between items-start gap-5'>
-        <div
-          className='flex-1 flex justify-start items-center gap-3 cursor-pointer'
+      <button
+          type='button'
+          className='flex-1 flex justify-start items-center gap-3 cursor-pointer text-left bg-transparent border-0 p-0'
           onClick={handleProfileClick}
         >
           <Image
@@ -49,9 +47,14 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
               {post.creator.email}
             </p>
           </div>
-        </div>
+        </button>
 
-        <div className='copy_btn' onClick={handleCopy}>
+        <button
+          type='button'
+          className='copy_btn'
+          onClick={handleCopy}
+          aria-label={copied === post.prompt ? "Copied" : "Copy prompt"}
+        >
           <Image
             src={
               copied === post.prompt
@@ -59,10 +62,10 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
                 : "/assets/icons/copy.svg"
             }
             alt={copied === post.prompt ? "tick_icon" : "copy_icon"}
-            width={12}
-            height={12}
-          />
-        </div>
+          width={12}
+          height={12}
+        />
+        </button>
       </div>
 
       <p className='my-4 font-satoshi text-sm text-gray-700'>{post.prompt}</p>
@@ -75,18 +78,20 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
 
       {session?.user.id === post.creator._id && pathName === "/profile" && (
         <div className='mt-5 flex-center gap-4 border-t border-gray-100 pt-3'>
-          <p
-            className='font-inter text-sm green_gradient cursor-pointer'
+          <button
+            type='button'
+            className='font-inter text-sm green_gradient cursor-pointer bg-transparent border-0 p-0'
             onClick={handleEdit}
           >
             Edit
-          </p>
-          <p
-            className='font-inter text-sm orange_gradient cursor-pointer'
+          </button>
+          <button
+            type='button'
+            className='font-inter text-sm orange_gradient cursor-pointer bg-transparent border-0 p-0'
             onClick={handleDelete}
           >
             Delete
-          </p>
+          </button>
         </div>
       )}
     </div>

@@ -2,7 +2,6 @@
 const nextConfig = {
   turbopack: {},
   serverExternalPackages: ["mongoose"],
-  experimental: {},
   images: {
     remotePatterns: [
       {
@@ -12,13 +11,6 @@ const nextConfig = {
         pathname: "/**",
       },
     ],
-  },
-  webpack(config) {
-    config.experiments = {
-      ...config.experiments,
-      topLevelAwait: true,
-    };
-    return config;
   },
 };
 

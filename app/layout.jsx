@@ -1,7 +1,10 @@
 import "@styles/globals.css";
 
+import { Inter } from "next/font/google";
 import Nav from "@components/Nav";
 import Provider from "@components/Provider";
+
+const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata = {
   title: "Promptopia",
@@ -9,7 +12,7 @@ export const metadata = {
 };
 
 const RootLayout = ({ children }) => (
-  <html lang='en'>
+  <html lang='en' className={inter.className}>
     <body>
       <Provider>
         <div className='main'>

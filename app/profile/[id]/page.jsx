@@ -11,17 +11,30 @@ const UserProfile = ({ params }) => {
   const { id } = use(params);
 
   const [userPosts, setUserPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch(`/api/users/${id}/posts`);
-      const data = await response.json();
-
-      setUserPosts(data);
+      setIsLoading(true);
+      setError(null);
+      try {
+        const response = await fetch(`/api/users/${id}/posts`);
+        if (!response.ok) throw new Error("Failed to fetch user posts");
+        const data = await response.json();
+        setUserPosts(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setIsLoading(false);
+      }
     };
 
     if (id) fetchPosts();
   }, [id]);
+
+  if (isLoading) return <p className='mt-8 text-center text-gray-500'>Loading prompts...</p>;
+  if (error) return <p className='mt-8 text-center text-red-500'>{error}</p>;
 
   return (
     <Profile

@@ -11,13 +11,23 @@ const MyProfile = () => {
   const { data: session } = useSession();
 
   const [myPosts, setMyPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch(`/api/users/${session?.user.id}/posts`);
-      const data = await response.json();
-
-      setMyPosts(data);
+      setIsLoading(true);
+      setError(null);
+      try {
+        const response = await fetch(`/api/users/${session?.user.id}/posts`);
+        if (!response.ok) throw new Error("Failed to fetch your posts");
+        const data = await response.json();
+        setMyPosts(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setIsLoading(false);
+      }
     };
 
     if (session?.user.id) fetchPosts();
@@ -37,15 +47,15 @@ const MyProfile = () => {
         await fetch(`/api/prompt/${post._id.toString()}`, {
           method: "DELETE",
         });
-
-        const filteredPosts = myPosts.filter((item) => item._id !== post._id);
-
-        setMyPosts(filteredPosts);
+        setMyPosts((prev) => prev.filter((item) => item._id !== post._id));
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     }
   };
+
+  if (isLoading) return <p className='mt-8 text-center text-gray-500'>Loading your prompts...</p>;
+  if (error) return <p className='mt-8 text-center text-red-500'>{error}</p>;
 
   return (
     <Profile
