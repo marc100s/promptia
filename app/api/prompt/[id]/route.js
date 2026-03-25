@@ -1,6 +1,9 @@
 import Prompt from "@models/prompt";
 import { connectToDB } from "@utils/database";
 import { auth } from "@auth";
+import "@models/user";
+
+export const dynamic = 'force-dynamic';
 
 export const GET = async (request, { params }) => {
   try {

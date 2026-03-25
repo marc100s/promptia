@@ -2,6 +2,8 @@ import { connectToDB } from "@utils/database";
 import Prompt from "@models/prompt";
 import "@models/user";
 
+export const dynamic = 'force-dynamic';
+
 export const GET = async (request) => {
     try {
         await connectToDB();
