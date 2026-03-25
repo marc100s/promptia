@@ -1,8 +1,8 @@
-import "@styles/globals.css";
+import "@/styles/globals.css";
 
 import { Inter } from "next/font/google";
-import Nav from "@components/Nav";
-import Provider from "@components/Provider";
+import Nav from "@/components/Nav";
+import Provider from "@/components/Provider";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 

@@ -1,8 +1,8 @@
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
 
-import User from "@models/user";
-import { connectToDB } from "@utils/database";
+import User from "@/models/user";
+import { connectToDB } from "@/utils/database";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   secret: process.env.AUTH_SECRET,

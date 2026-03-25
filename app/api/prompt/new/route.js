@@ -1,6 +1,6 @@
-import { connectToDB } from "@utils/database";
-import Prompt from "@models/prompt";
-import { auth } from "@auth";
+import { connectToDB } from "@/utils/database";
+import Prompt from "@/models/prompt";
+import { auth } from "@/auth";
 
 export const POST = async (req) => {
   const session = await auth();
