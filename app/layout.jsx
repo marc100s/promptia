@@ -13,7 +13,7 @@ export const metadata = {
 
 const RootLayout = ({ children }) => (
   <html lang='en' className={inter.className}>
-    <body>
+    <body suppressHydrationWarning>
       <Provider>
         <div className='main'>
           <div className='gradient' />
