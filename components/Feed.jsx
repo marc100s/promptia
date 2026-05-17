@@ -22,27 +22,48 @@ const Feed = () => {
   const [allPosts, setAllPosts] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [searchedResults, setSearchedResults] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const searchTimeout = useRef(null);
 
   const fetchPosts = async () => {
-    setIsLoading(true);
-    setError(null);
     try {
       const response = await fetch("/api/prompt");
       if (!response.ok) throw new Error("Failed to fetch prompts");
       const data = await response.json();
-      setAllPosts(data);
+      return data;
     } catch (err) {
-      setError(err.message);
-    } finally {
-      setIsLoading(false);
+      throw new Error(
+        err instanceof Error ? err.message : "Failed to fetch prompts"
+      );
     }
   };
 
   useEffect(() => {
-    fetchPosts();
+    let isMounted = true;
+
+    const loadPosts = async () => {
+      try {
+        const data = await fetchPosts();
+        if (!isMounted) return;
+        setAllPosts(data);
+        setError(null);
+      } catch (err) {
+        if (!isMounted) return;
+        setError(err.message);
+      } finally {
+        if (isMounted) {
+          setIsLoading(false);
+        }
+      }
+    };
+
+    void loadPosts();
+
+    return () => {
+      isMounted = false;
+      clearTimeout(searchTimeout.current);
+    };
   }, []);
 
   const filterPrompts = (searchtext) => {
