@@ -1,5 +1,8 @@
+allowBuilds:
+  unrs-resolver: set this to true or false
 onlyBuiltDependencies:
   - sharp
   - unrs-resolver
 overrides:
   postcss@<8.5.10: '>=8.5.10'
+  "eslint@>=9.39.5 <10.0.0-0": "9.39.5"
