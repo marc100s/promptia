@@ -38,7 +38,7 @@ Full tech stack [here](/techstack.md)
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [marc100s/promptia](https://github.com/marc100s/promptia)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|15<br/>Tools used|01/05/24 <br/>Report generated|
+|15<br/>Tools used|11/11/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -78,7 +78,7 @@ Full tech stack [here](/techstack.md)
   <br>
   <sub><a href="https://nextjs.org/">Next.js</a></sub>
   <br>
-  <sub>v13.4.19</sub>
+  <sub>v16.4.6</sub>
 </td>
 
 <td align='center'>
@@ -86,7 +86,7 @@ Full tech stack [here](/techstack.md)
   <br>
   <sub><a href="https://github.com/postcss/postcss">PostCSS</a></sub>
   <br>
-  <sub></sub>
+  <sub>v8.5.32</sub>
 </td>
 
 <td align='center'>
@@ -94,7 +94,7 @@ Full tech stack [here](/techstack.md)
   <br>
   <sub><a href="https://reactjs.org/">React</a></sub>
   <br>
-  <sub>v18.2.0</sub>
+  <sub>v19.3.1</sub>
 </td>
 
 <td align='center'>
@@ -102,7 +102,7 @@ Full tech stack [here](/techstack.md)
   <br>
   <sub><a href="https://tailwindcss.com">Tailwind CSS</a></sub>
   <br>
-  <sub></sub>
+  <sub>v4.3.5</sub>
 </td>
 
 </tr>
@@ -115,7 +115,7 @@ Full tech stack [here](/techstack.md)
   <br>
   <sub><a href="http://www.mongodb.com/">MongoDB</a></sub>
   <br>
-  <sub>v5.8.1</sub>
+  <sub>v7.8.0</sub>
 </td>
 
 <td align='center'>
@@ -123,7 +123,7 @@ Full tech stack [here](/techstack.md)
   <br>
   <sub><a href="http://mongoosejs.com/">Mongoose</a></sub>
   <br>
-  <sub>v7.5.0</sub>
+  <sub>v9.12.1</sub>
 </td>
 
 </tr>
@@ -140,11 +140,11 @@ Full tech stack [here](/techstack.md)
 </td>
 
 <td align='center'>
-  <img width='36' height='36' src='https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png' alt='npm'>
+  <img width='36' height='36' src='https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png' alt='pnpm'>
   <br>
-  <sub><a href="https://www.npmjs.com/">npm</a></sub>
+  <sub><a href="https://pnpm.io/">pnpm</a></sub>
   <br>
-  <sub></sub>
+  <sub>v11.24.0</sub>
 </td>
 
 </tr>

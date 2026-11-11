@@ -21,7 +21,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           session.user.id = sessionUser._id.toString();
         }
       } catch (error) {
-        console.error("Error fetching session user:", error);
+        console.error("[AUTH] Error fetching session user:", error);
       }
       return session;
     },
@@ -41,7 +41,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
         return true;
       } catch (error) {
-        console.error("Error during sign in:", error.message);
+        console.error("[AUTH] Error during sign in:", error.message);
         return false;
       }
     },
