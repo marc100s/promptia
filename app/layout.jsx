@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import { Inter } from "next/font/google";
 import Nav from "@/components/Nav";
 import Provider from "@/components/Provider";
+import { validateEnvironment } from "@/utils/env";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
@@ -10,6 +11,8 @@ export const metadata = {
   title: "Promptopia",
   description: "Discover & Share AI Prompts",
 };
+
+validateEnvironment();
 
 const RootLayout = ({ children }) => (
   <html lang='en' className={inter.className}>
